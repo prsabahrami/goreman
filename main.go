@@ -85,7 +85,7 @@ var startRPCServer = flag.Bool("rpc-server", true, "Start an RPC server listenin
 var basedir = flag.String("basedir", "", "base directory")
 
 // base of port numbers for app
-var baseport = flag.Uint("b", os.Getenv("PORT"), "base number of port")
+var baseport = flag.Uint("b", parseUint(os.Getenv("PORT")), "base number of port")
 
 var setPorts = flag.Bool("set-ports", true, "False to avoid setting PORT env var for each subprocess")
 
@@ -322,4 +322,16 @@ func main() {
 		fmt.Fprintf(os.Stderr, "%s: %v\n", os.Args[0], err.Error())
 		os.Exit(1)
 	}
+}
+
+// Add this function definition somewhere in the file, preferably near other utility functions
+func parseUint(s string) uint {
+	if s == "" {
+		return 0
+	}
+	i, err := strconv.ParseUint(s, 10, 32)
+	if err != nil {
+		return 0
+	}
+	return uint(i)
 }
