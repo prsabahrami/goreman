@@ -85,7 +85,7 @@ var startRPCServer = flag.Bool("rpc-server", true, "Start an RPC server listenin
 var basedir = flag.String("basedir", "", "base directory")
 
 // base of port numbers for app
-var baseport = flag.Uint("b", 3000, "base number of port")
+var baseport = flag.Uint("b", os.Getenv("PORT"), "base number of port")
 
 var setPorts = flag.Bool("set-ports", true, "False to avoid setting PORT env var for each subprocess")
 
