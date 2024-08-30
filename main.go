@@ -85,7 +85,7 @@ var startRPCServer = flag.Bool("rpc-server", true, "Start an RPC server listenin
 var basedir = flag.String("basedir", "", "base directory")
 
 // base of port numbers for app
-var baseport = flag.Uint("b", 5000, "base number of port")
+var baseport = flag.Uint("b", 3000, "base number of port")
 
 var setPorts = flag.Bool("set-ports", true, "False to avoid setting PORT env var for each subprocess")
 
@@ -161,7 +161,7 @@ func readProcfile(cfg *config) error {
 		if *setPorts {
 			proc.setPort = true
 			proc.port = cfg.BasePort
-			cfg.BasePort += 100
+			cfg.BasePort = 8000
 		}
 		proc.cond = sync.NewCond(&proc.mu)
 		procs = append(procs, proc)
