@@ -6,7 +6,7 @@ https://github.com/ddollar/foreman
 
 ## Getting Started
 
-    go install github.com/mattn/goreman@latest
+    go install github.com/prsabahrami/goreman@latest
 
 ## Usage
 
