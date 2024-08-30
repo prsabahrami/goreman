@@ -74,7 +74,7 @@ var mu sync.Mutex
 var procs []*procInfo
 
 // filename of Procfile.
-var procfile = flag.String("f", "Procfile", "proc file")
+var procfile = flag.String("f", "ProcfileGoreman", "proc file")
 
 // rpc port number.
 var port = flag.Uint("p", defaultPort(), "port")
