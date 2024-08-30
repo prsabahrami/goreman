@@ -1,4 +1,4 @@
-module github.com/mattn/goreman
+module github.com/prsabahrami/goreman
 
 go 1.19
 
